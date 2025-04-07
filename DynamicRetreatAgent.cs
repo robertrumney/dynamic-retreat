@@ -16,13 +16,13 @@ public class DynamicRetreatAgent : MonoBehaviour
     private NavMeshAgent agent;
     private NavMeshPath path;
 
-    void Start()
+    private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         path = new NavMeshPath();
     }
 
-    void Update()
+    private void Update()
     {
         Vector3 direction = shouldRetreat ? (transform.position - target.position).normalized * retreatDistance
                                           : (target.position - transform.position).normalized * retreatDistance;
